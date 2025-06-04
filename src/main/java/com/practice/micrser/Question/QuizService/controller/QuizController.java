@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.practice.micrser.Question.QuizService.entity.Question;
 import com.practice.micrser.Question.QuizService.entity.Quiz;
 import com.practice.micrser.Question.QuizService.service.QuizService;
 
@@ -31,8 +32,8 @@ public class QuizController {
 		return ResponseEntity.ok(service.getAllQuizzes());
 	}
 
-	@GetMapping("/{id}")
-	public ResponseEntity<Quiz> getById(@PathVariable Long id) {
+	@GetMapping("/question/{id}")
+	public ResponseEntity<List<Question>> getById(@PathVariable Long id) {
 		return ResponseEntity.ok(service.getQuizById(id));
 	}
 	
