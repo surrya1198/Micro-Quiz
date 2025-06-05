@@ -13,11 +13,11 @@ import com.practice.micrser.Question.QuizService.entity.Question;
 @FeignClient(name = "QuestionService")
 public interface QuestionClient {
 
-	@GetMapping("/randomfivequestion")
+	@GetMapping("/question/randomfivequestion")
 	List<Question> getRandomFiveQuestion();
 
-	@PostMapping("/fivequestion")
+	@PostMapping("/question/fivequestion")
 
-	public List<Question> getRandomFiveQuestion(@RequestBody List<Long> questionids);
+	 List<Question> getQuestionById(@RequestBody List<Long> questionids);
 
 }

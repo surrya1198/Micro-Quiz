@@ -31,7 +31,7 @@ public class QuizService {
 		Quiz q = repository.findById(id).orElseThrow();
 		if (q != null) {
 
-			return questionClient.getRandomFiveQuestion(q.getQuestionIds());
+			return questionClient.getQuestionById(q.getQuestionIds());
 		}else {
 			
 			throw new IllegalArgumentException("could not the find the quiz id");
